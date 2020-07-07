@@ -27,7 +27,7 @@ $id = $kel->id;
 $data = $update->callback_query->data;
 $chat_id2 = $update->callback_query->message->chat->id;
 $mid = $update->callback_query->message->message_id;
-$ati = $update->message->from->first_name;
+$first_name = $update->message->from->first_name;
 $familya = $update->message->from->last_name;
 $login = $update->message->from->username;
 $user_id = $update->message->from->id;
@@ -53,9 +53,12 @@ if($text == "/start"){
     bot('sendMessage',[
        'chat_id'=>$chat_id,
        'parse_mode'=>'html',
-        'text'=>"Salom $ati.$bot kanallardagi postga avtomatik Kanal reklamasini joylash uchun ishlab chiqildi. $bot ni kanalingizga Admin qiling va kanalingizdagi postlarga avtomatik kanalingiz nomi qo'yiladi!
- Bot Admini:@Gunnersaur_UZ"
-"Kanal: @Oddiy_XakkeR",
+        'text'=>"<b>Salom $first_name.Botga xush kelibsiz. Botni kanalga admin etib tayinlang va bot kanallardagi postga avtomatik Kanal nomi va Do'stlarga Ulashish inlayn URL-tugmachalari qo'yiladi</b>",
+        'reply_markup'=>json encode([
+            'inline_keyboard'=>[
+                [['text'=>"Support",'url'=>"https://t.me/Gunnersaur_UZ"],['text'=>"Channel",'url'=>"https://t.me/ODDIY_XAKKER"]],
+                ]
+            ])
 ]);
 }
 
@@ -85,7 +88,7 @@ $export = bot('exportChatInviteLink',[
     bot('editMessageCaption',[
         'chat_id'=>$message_ch_chid,
 'message_id'=>$message_ch_mid,
-'caption'=>"[@$message_ch_user] Uchun Maxsus!",
+'caption'=>"@$message_ch_user Kanli Uchun Maxsus!",
         'message_id'=>$message_ch_mid,
         'parse_mode'=> 'html',
         'reply_markup'=>json_encode([
@@ -104,7 +107,7 @@ if($message_ch_video){
   $a = $export->result; bot('editMessageCaption',[
         'chat_id'=>$message_ch_chid,
         'caption'=>"$texxx \n
- [@$message_ch_user] Uchun Maxsus!",
+ @$message_ch_user Kanali Uchun Maxsus!",
         'message_id'=>$message_ch_mid,
         'parse_mode'=> 'html',
         'reply_markup'=>json_encode([
@@ -123,7 +126,7 @@ if($message_ch_audio){
   $a = $export->result; bot('editMessageCaption',[
         'chat_id'=>$message_ch_chid,
         'caption'=>"$texxx \n
- [@$message_ch_user] Uchun Maxsus!",
+ @$message_ch_user Kanali Uchun Maxsus!",
         'message_id'=>$message_ch_mid,
         'parse_mode'=> 'HTML',
         'reply_markup'=>json_encode([
@@ -141,7 +144,7 @@ if($message_ch_doc){
   $a = $export->result; bot('editMessageCaption',[
         'chat_id'=>$message_ch_chid,
         'caption'=>"$texxx \n 
- [@$message_ch_user] Uchun Maxsus!",
+ @$message_ch_user Kanali Uchun Maxsus!",
         'message_id'=>$message_ch_mid,
         'parse_mode'=> 'HTML',
         'reply_markup'=>json_encode([
