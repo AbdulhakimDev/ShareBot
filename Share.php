@@ -88,7 +88,7 @@ $export = bot('exportChatInviteLink',[
     bot('editMessageCaption',[
         'chat_id'=>$message_ch_chid,
 'message_id'=>$message_ch_mid,
-'caption'=>"@$message_ch_user Kanli Uchun Maxsus!",
+'caption'=>"@$message_ch_user Kanali Uchun Maxsus!",
         'message_id'=>$message_ch_mid,
         'parse_mode'=> 'html',
         'reply_markup'=>json_encode([
