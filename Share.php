@@ -179,7 +179,6 @@ if(mb_stripos($baza, $message_ch_chid) !== false){
 }else{  
 file_put_contents("azo.dat", "$bazan$message_ch_chid");
 }
-}
 
 
 
