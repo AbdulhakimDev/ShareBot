@@ -1,6 +1,6 @@
 <?php
 ob_start();
-define('API_KEY', '1002411973:AAGqJQaLzQm79jFXHJOUgLUl8usPNz0TcrU');
+define('API_KEY', '1297455433:AAGsj72jzZtXxKm13J-3RRaNWVYVs8Oxkvk');
 $admin = "770794055"; 
 $bot = "@ShareFriendsRobot";
 //@Gunnersaur_UZ
